@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salam Pembuka - Tia & Ajie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #f6e6c3;
+      --accent-color: #d6b86a;
+      --dark-color: #004b3f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: "Montserrat", sans-serif;
+      background: url("images/bg.jpg") no-repeat center center/cover;
+      color: var(--primary-color);
+      overflow: hidden;
+    }
+
+    body {
+      position: relative;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 30px 20px 100px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pillar-left, .pillar-right {
+      position: absolute;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      background: url("images/pinggir.png") no-repeat center center/cover;
+      z-index: 1;
+    }
+
+    .pillar-left { left: 0; }
+    .pillar-right { right: 0; transform: scaleX(-1); }
+
+    .corner {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: url("images/pojok.png") no-repeat center center/contain;
+      z-index: 1;
+    }
+
+    .corner.tl { top: 0; left: 0; }
+    .corner.tr { top: 0; right: 0; transform: scaleX(-1); }
+    .corner.bl { bottom: 0; left: 0; transform: scaleY(-1); }
+    .corner.br { bottom: 0; right: 0; transform: scale(-1); }
+
+    .content {
+      z-index: 2;
+      max-width: 700px;
+      padding: 0 20px;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      margin-bottom: 25px;
+      color: var(--primary-color);
+    }
+
+    .arabic {
+      font-size: 46px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      margin-bottom: 25px;
+      color: var(--primary-color);
+    }
+
+    .desc {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #fffde9;
+    }
+
+    /* === Animasi Fade In Up === */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate {
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+
+    /* Bottom scrollable nav */
+    .bottom-scroll-nav {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(246, 230, 195, 0.95);
+      display: flex;
+      overflow-x: auto;
+      gap: 14px;
+      padding: 10px 16px;
+      z-index: 10;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      max-width: 90vw;
+      scroll-behavior: smooth;
+      white-space: nowrap;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 75, 63, 0.4) transparent;
+    }
+
+    .bottom-scroll-nav::-webkit-scrollbar {
+      height: 6px;
+    }
+    .bottom-scroll-nav::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .bottom-scroll-nav::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 75, 63, 0.4);
+      border-radius: 3px;
+    }
+
+    .bottom-scroll-nav a {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark-color);
+      gap: 4px;
+      padding: 6px 10px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .bottom-scroll-nav a:hover,
+    .bottom-scroll-nav a.active {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+    }
+
+    .bottom-scroll-nav a i {
+      font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+      .bottom-scroll-nav {
+        bottom: 10px;
+        padding: 8px 10px;
+        max-width: 95vw;
+        gap: 10px;
+        font-size: 12px;
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="Undangan Digital Tia & Ajie">
+    <div class="pillar-left"></div>
+    <div class="pillar-right"></div>
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <div class="content">
+      <div class="title animate delay-1">✤ Bismillah ✤</div>
+      <div class="arabic animate delay-2" dir="rtl" lang="ar">
+        بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+      </div>
+      <div class="desc animate delay-3">
+        Maha suci Allah yang menciptakan makhluk-Nya berpasang-pasangan.
+        <br><br>
+        Ya Allah perkenankanlah kami merangkaikan kasih sayang yang Kau ciptakan di antara kami
+        untuk mengikuti Sunnah Rasul-Mu dalam rangka membentuk keluarga yang sakinah, mawaddah, warahmah.
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="bg-music" src="audio/lagu.mp3" autoplay loop muted></audio>
+
+  <!-- Scrollable Bottom Menu -->
+  <nav class="bottom-scroll-nav" aria-label="Navigasi Undangan">
+    <a href="index.html"><i class="fas fa-envelope"></i> Opening</a>
+    <a href="quote.html"><i class="fas fa-moon"></i> Quotes</a>
+    <a href="video.html"><i class="fas fa-video"></i> Video</a>
+    <a href="salam.html"class="active"><i class="fas fa-list"></i> Salam</a>
+    <a href="mempelai.html" ><i class="fas fa-heart"></i> Mempelai</a>
+    <a href="akad.html"><i class="fas fa-ring"></i> Akad</a>
+    <a href="Resepsi.html"><i class="fas fa-ring"></i> Resepsi</a>
+    <a href="location.html"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+    <a href="rsvp.html"><i class="fas fa-check-circle"></i> RSVP</a>
+    <a href="Gift.html"><i class="fas fa-gift"></i> Gift</a>
+  </nav>
+
+  <script>
+    // Autoplay music
+    const music = document.getElementById("bg-music");
+    document.addEventListener("DOMContentLoaded", () => {
+      music.play().catch(() => {
+        console.log("Autoplay diblokir oleh browser.");
+      });
+    });
+  </script>
+</body>
+</html>

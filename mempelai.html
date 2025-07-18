@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Undangan - Mempelai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=MedievalSharp&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: url('images/bg.jpg') no-repeat center center/cover;
+      color: #fff9d9;
+      min-height: 100vh;
+      position: relative;
+    }
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    .pillar-left, .pillar-right {
+      position: fixed;
+      top: 0;
+      width: 60px;
+      height: 100vh;
+      background: url('images/pinggir.png') no-repeat center center/cover;
+      z-index: 1;
+    }
+    .pillar-left { left: 0; }
+    .pillar-right { right: 0; transform: scaleX(-1); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate {
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 380px;
+      margin: 100px auto 40px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .photo-wrapper {
+      width: 160px;
+      height: 160px;
+      margin: 20px auto 12px;
+    }
+    .photo-wrapper img.photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #bfa96f;
+      box-shadow: 0 0 0 6px #004d40, 0 0 0 9px #bfa96f;
+    }
+
+    h1.name {
+      font-family: 'MedievalSharp', cursive;
+      font-size: 26px;
+      margin-top: 10px;
+      color: #fffbe8;
+    }
+
+    .text-block {
+      font-size: 14px;
+      color: #fff;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .with-text {
+      font-family: 'Great Vibes', cursive;
+      font-size: 20px;
+      color: #fff9d9;
+      margin: 20px 0;
+    }
+
+    nav.bottom-scroll-nav {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(246,230,195,0.95);
+      display: flex;
+      overflow-x: auto;
+      gap: 14px;
+      padding: 10px 16px;
+      max-width: 90vw;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    nav.bottom-scroll-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #004b3f;
+      padding: 6px 10px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      transition: background 0.3s ease;
+    }
+
+    nav.bottom-scroll-nav a:hover,
+    nav.bottom-scroll-nav a.active {
+      background-color: #d6b86a;
+    }
+
+    nav.bottom-scroll-nav a i {
+      font-size: 18px;
+    }
+
+    @media(max-width: 400px) {
+      .container { margin-top: 80px; padding: 0 15px; }
+      .photo-wrapper { width: 140px; height: 140px; }
+      h1.name { font-size: 22px; }
+      .with-text { font-size: 18px; }
+      .text-block { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="pillar-left"></div>
+  <div class="pillar-right"></div>
+
+  <div class="container">
+    <div class="photo-wrapper animate" style="animation-delay: 0.2s;">
+      <img class="photo" src="images/Foto 1.jpg" alt="Mempelai Wanita" />
+    </div>
+    <h1 class="name animate" style="animation-delay: 0.4s;">Mariatil Kabatia</h1>
+    <div class="text-block animate" style="animation-delay: 0.6s;">
+      <p>Putri dari</p>
+      <p>Bapak Agustan Paewa</p>
+      <p>& Ibu Rosnaeni</p>
+    </div>
+
+    <div class="with-text animate" style="animation-delay: 0.8s;">dengan</div>
+
+    <h1 class="name animate" style="animation-delay: 1s;">Dwistha Permana Ajie</h1>
+    <div class="text-block animate" style="animation-delay: 1.2s;">
+      <p>Putra dari</p>
+      <p>Bapak Ismit Anwar</p>
+      <p>& Ibu Sintha Prameswari</p>
+    </div>
+
+    <div class="photo-wrapper animate" style="animation-delay: 1.4s;">
+      <img class="photo" src="images/Foto 2.jpg" alt="Mempelai Pria" />
+    </div>
+  </div>
+
+  <nav class="bottom-scroll-nav" aria-label="Navigasi Undangan">
+    <a href="index.html"><i class="fas fa-envelope"></i> Opening</a>
+    <a href="quote.html"><i class="fas fa-moon"></i> Quotes</a>
+    <a href="video.html"><i class="fas fa-video"></i> Video</a>
+    <a href="salam.html"><i class="fas fa-list"></i> Salam</a>
+    <a href="mempelai.html" class="active"><i class="fas fa-heart"></i> Mempelai</a>
+    <a href="akad.html"><i class="fas fa-ring"></i> Akad</a>
+    <a href="Resepsi.html"><i class="fas fa-ring"></i> Resepsi</a>
+    <a href="location.html"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+    <a href="rsvp.html"><i class="fas fa-check-circle"></i> RSVP</a>
+    <a href="Gift.html"><i class="fas fa-gift"></i> Gift</a>
+  </nav>
+</body>
+</html>

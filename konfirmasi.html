@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RSVP Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #4a4a4a;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #000;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      font-size: 14px;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      color: #64748b;
+      font-family: Arial, sans-serif;
+    }
+    input[type="text"]::placeholder,
+    textarea::placeholder {
+      color: #94a3b8;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+    button {
+      margin-top: 15px;
+      width: 100%;
+      background: #f9e5b8;
+      border: none;
+      border-radius: 20px;
+      padding: 12px 0;
+      font-size: 14px;
+      color: #4a4a4a;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+    }
+    button:focus {
+      outline: none;
+    }
+    .bottom-close {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f9a8a8;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    .bottom-close svg {
+      stroke: #fff;
+      stroke-width: 2.5;
+    }
+    @media (max-width: 440px) {
+      .container {
+        max-width: 100%;
+        padding: 20px 15px 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <h1>RSVP</h1>
+    <form>
+      <label for="name">Nama</label>
+      <input type="text" id="name" name="name" placeholder="Nama Tamu" autocomplete="off" />
+      
+      <label for="group">Grup</label>
+      <input type="text" id="group" name="group" placeholder="Grup" autocomplete="off" />
+      
+      <label for="whatsapp">No WhatsApp</label>
+      <input type="text" id="whatsapp" name="whatsapp" placeholder="No WhatsApp" autocomplete="off" />
+      
+      <label for="attendance">Kehadiran</label>
+      <select id="attendance" name="attendance" aria-label="Kehadiran">
+        <option value="hadir" selected>Hadir</option>
+        <option value="tidak-hadir">Tidak Hadir</option>
+      </select>
+      
+      <label for="jumlah-tamu">Jumlah Tamu</label>
+      <select id="jumlah-tamu" name="jumlah-tamu" aria-label="Jumlah Tamu">
+        <option value="1" selected>1 Orang</option>
+        <option value="2">2 Orang</option>
+        <option value="3">3 Orang</option>
+        <option value="4">4 Orang</option>
+        <option value="5">5 Orang</option>
+      </select>
+      
+      <label for="comment">Komentar atau Ucapan</label>
+      <textarea id="comment" name="comment" placeholder="Komentar atau Ucapan"></textarea>
+      
+      <button type="submit" aria-label="Kirim">Kirim</button>
+    </form>
+  </div>
+
+  <!-- Tombol Close Bawah -->
+  <button class="bottom-close" onclick="window.location.href='rsvp.html'" aria-label="Kembali ke RSVP">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <line x1="4" y1="4" x2="16" y2="16" stroke-linecap="round"/>
+      <line x1="16" y1="4" x2="4" y2="16" stroke-linecap="round"/>
+    </svg>
+  </button>
+</body>
+</html>

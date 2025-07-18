@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Do’a Untuk Pengantin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #00332f;
+      --text-color: #f9f1d1;
+      --btn-bg: #f9f1d1;
+      --btn-hover: #ffeeb3;
+      --menu-bg: rgba(246,230,195,0.95);
+      --menu-active: #d6b86a;
+      --menu-text: #004b3f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/bg.jpg') no-repeat center center/cover;
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px 100px;
+      position: relative;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .pillar-left, .pillar-right {
+      position: fixed;
+      top: 0;
+      width: 60px;
+      height: 100vh;
+      background: url('images/pinggir.png') no-repeat center center/cover;
+      z-index: 1;
+    }
+
+    .pillar-left { left: 0; }
+    .pillar-right { right: 0; transform: scaleX(-1); }
+
+    .container {
+      max-width: 460px;
+      width: 100%;
+      z-index: 2;
+      animation: fadeInUp 1.3s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .quote {
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .hr-text {
+      font-size: 16px;
+      margin-bottom: 25px;
+      font-style: italic;
+    }
+
+    .instruction {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+
+    button {
+      background-color: var(--btn-bg);
+      color: var(--bg-color);
+      font-size: 18px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--btn-hover);
+    }
+
+    nav.bottom-scroll-nav {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--menu-bg);
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 8px 12px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 5;
+    }
+
+    nav.bottom-scroll-nav::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    nav.bottom-scroll-nav::-webkit-scrollbar-thumb {
+      background-color: rgba(0,75,63,0.4);
+      border-radius: 3px;
+    }
+
+    nav.bottom-scroll-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--menu-text);
+      padding: 6px 10px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      transition: background 0.3s ease;
+    }
+
+    nav.bottom-scroll-nav a:hover,
+    nav.bottom-scroll-nav a.active {
+      background-color: var(--menu-active);
+    }
+
+    nav.bottom-scroll-nav a i {
+      font-size: 18px;
+    }
+
+    @media (max-width: 400px) {
+      h1 { font-size: 34px; }
+      .quote, .instruction, .hr-text { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="pillar-left"></div>
+  <div class="pillar-right"></div>
+
+  <div class="container" role="main" aria-label="Do’a Untuk Pengantin">
+    <h1>Do’a Untuk Pengantin</h1>
+    <p class="quote">
+      "Semoga Allah memberkahimu ketika senang dan susah, serta mengumpulkan kalian berdua dalam kebaikan dan cinta yang diridhai‑Nya."
+    </p>
+    <p class="hr-text">[HR. Abu Daud]</p>
+    <p class="instruction">
+      Tekan tombol di bawah untuk mengirim do'a & konfirmasi kehadiran.
+    </p>
+    <button onclick="window.location.href='konfirmasi.html'">
+      Konfirmasi & Kirim Ucapan
+    </button>
+  </div>
+
+  <nav class="bottom-scroll-nav" aria-label="Navigasi Undangan">
+    <a href="index.html"><i class="fas fa-envelope"></i> Opening</a>
+    <a href="quote.html"><i class="fas fa-moon"></i> Quotes</a>
+    <a href="video.html"><i class="fas fa-video"></i> Video</a>
+    <a href="salam.html"><i class="fas fa-list"></i> Salam</a>
+    <a href="mempelai.html"><i class="fas fa-heart"></i> Mempelai</a>
+    <a href="akad.html"><i class="fas fa-ring"></i> Akad</a>
+    <a href="Resepsi.html"><i class="fas fa-ring"></i> Resepsi</a>
+    <a href="location.html"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+    <a href="rsvp.html" class="active"><i class="fas fa-check-circle"></i> RSVP</a>
+    <a href="Gift.html"><i class="fas fa-gift"></i> Gift</a>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Save The Date - Tia & Ajie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #f6e6c3;
+      --accent-color: #d6b86a;
+      --dark-color: #004b3f;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body {
+      width:100%; height:100%;
+      font-family:'Montserrat',sans-serif;
+      background:url("images/bg.jpg") no-repeat center center/cover;
+      color:var(--primary-color);
+      overflow:hidden;
+    }
+    body { position:relative; }
+    .container {
+      width:100vw; height:100vh;
+      padding:20px;
+      padding-bottom: calc(env(safe-area-inset-bottom, 20px) + 100px);
+      display:flex; flex-direction:column;
+      justify-content:center; align-items:center;
+      text-align:center;
+      background:rgba(0,0,0,0.4);
+      position:relative; z-index:1;
+    }
+    .pillar-left, .pillar-right {
+      position:absolute; top:0;
+      width:60px; height:100%;
+      background:url("images/pinggir.png") no-repeat center center/cover;
+      z-index:2;
+    }
+    .pillar-left { left:0; }
+    .pillar-right { right:0; transform:scaleX(-1); }
+    .corner {
+      position:absolute; width:100px; height:100px;
+      background:url("images/pojok.png") no-repeat center center/contain;
+      z-index:2;
+    }
+    .corner.tl { top:0; left:0; }
+    .corner.tr { top:0; right:0; transform:scaleX(-1); }
+    .corner.bl { bottom:0; left:0; transform:scaleY(-1); }
+    .corner.br { bottom:0; right:0; transform:scale(-1); }
+    .date {
+      font-size:30px; letter-spacing:6px; font-weight:600;
+      display:flex; gap:10px; z-index:3;
+      animation:fadeInUp 1s ease forwards;
+      animation-delay:0.2s; opacity:0;
+    }
+    .dot { font-size:20px; }
+    .photo-wrapper {
+      margin:25px auto; width:200px; height:200px;
+      border-radius:50%; border:5px solid var(--accent-color);
+      overflow:hidden; z-index:3;
+      animation:fadeInUp 1s ease forwards;
+      animation-delay:0.5s; opacity:0;
+    }
+    .photo-wrapper img {
+      width:100%; height:100%; object-fit:cover;
+    }
+    .names {
+      font-family:"Great Vibes",cursive;
+      font-size:46px; margin-top:15px; z-index:3;
+      animation:fadeInUp 1s ease forwards;
+      animation-delay:0.8s; opacity:0;
+    }
+    .save-date {
+      font-size:18px; font-weight:600; letter-spacing:2px;
+      margin-top:5px; z-index:3;
+      animation:fadeInUp 1s ease forwards;
+      animation-delay:1.1s; opacity:0;
+    }
+    .invitation-text {
+      margin-top:20px; font-size:16px; line-height:1.6;
+      z-index:3;
+      animation:fadeInUp 1s ease forwards;
+      animation-delay:1.4s; opacity:0;
+    }
+    .invitation-text b { font-weight:bold; }
+    .bottom-icons {
+      position:absolute; bottom: calc(env(safe-area-inset-bottom, 20px) + 100px);
+      right:20px; display:flex; flex-direction:column;
+      gap:15px; z-index:4;
+    }
+    .bottom-icons button {
+      background:var(--primary-color); border:none;
+      border-radius:50%; width:44px; height:44px;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--dark-color); font-size:18px;
+      cursor:pointer; transition:background 0.3s;
+    }
+    .bottom-icons button:hover { background:var(--accent-color); }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(30px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    .bottom-scroll-nav {
+      position:fixed;
+      bottom: env(safe-area-inset-bottom, 20px);
+      left:50%; transform:translateX(-50%);
+      background:rgba(246,230,195,0.95);
+      display:flex; overflow-x:auto;
+      gap:14px; padding:10px 16px;
+      max-width:90vw; border-radius:14px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
+      z-index:10;
+      scrollbar-width:thin;
+    }
+    .bottom-scroll-nav::-webkit-scrollbar { height:6px; }
+    .bottom-scroll-nav::-webkit-scrollbar-thumb {
+      background:rgba(0,75,63,0.4); border-radius:3px;
+    }
+    .bottom-scroll-nav a {
+      display:flex; flex-direction:column; align-items:center;
+      font-size:13px; font-weight:600;
+      color:var(--dark-color); text-decoration:none;
+      padding:6px 10px; border-radius:10px;
+      flex-shrink:0; transition:background 0.3s;
+    }
+    .bottom-scroll-nav a:hover,
+    .bottom-scroll-nav a.active { background:var(--accent-color); }
+    .bottom-scroll-nav a i { font-size:18px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="pillar-left"></div>
+    <div class="pillar-right"></div>
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <div class="date"><span>12</span><span class="dot">✤</span><span>05</span><span class="dot">✤</span><span>25</span></div>
+    <div class="photo-wrapper"><img src="images/foto.png" alt="Foto pasangan Tia dan Ajie" /></div>
+    <div class="names">Tia & Ajie</div>
+    <div class="save-date">SAVE THE DATE</div>
+    <div class="invitation-text">
+      Kepada Yth;<br/>
+      Bapak/Ibu/Saudara/i<br/>
+      <b>Nama Tamu</b>
+    </div>
+
+    <div class="bottom-icons">
+      <button id="music-btn" aria-label="Toggle Music"><i class="fas fa-pause"></i></button>
+    </div>
+  </div>
+
+  <audio id="bg-music" src="audio/lagu.mp3" autoplay loop muted></audio>
+
+  <nav class="bottom-scroll-nav">
+    <a href="index.html" class="active"><i class="fas fa-envelope"></i> Opening</a>
+    <a href="quote.html"><i class="fas fa-moon"></i> Quotes</a>
+    <a href="video.html"><i class="fas fa-video"></i> Video</a>
+    <a href="salam.html"><i class="fas fa-list"></i> Salam</a>
+    <a href="mempelai.html"><i class="fas fa-heart"></i> Mempelai</a>
+    <a href="akad.html"><i class="fas fa-ring"></i> Akad</a>
+    <a href="Resepsi.html"><i class="fas fa-ring"></i> Resepsi</a>
+    <a href="location.html"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+    <a href="rsvp.html"><i class="fas fa-check-circle"></i> RSVP</a>
+    <a href="Gift.html"><i class="fas fa-gift"></i> Gift</a>
+  </nav>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const musicBtn = document.getElementById("music-btn");
+    const nav = document.querySelector(".bottom-scroll-nav");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      music.play().catch(() => console.log("Autoplay error"));
+    });
+
+    musicBtn.addEventListener("click", () => {
+      if (music.paused) {
+        music.play();
+        musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        music.pause();
+        musicBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    });
+  </script>
+</body>
+</html>

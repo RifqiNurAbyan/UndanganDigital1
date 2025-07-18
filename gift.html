@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dea Rossi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-dark: #5e3b3d;
+      --box-bg: #7b5c5e;
+      --text-light: #f5e9c4;
+      --btn-bg: #4a4a4a;
+      --btn-hover: #6a6a6a;
+      --menu-bg: rgba(246,230,195,0.95);
+      --menu-active: #d6b86a;
+      --menu-text: #004b3f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/bg.jpg') center/cover no-repeat;
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 30px 15px 90px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .pillar-left, .pillar-right {
+      position: fixed;
+      top: 0;
+      width: 60px;
+      height: 100vh;
+      background: url('images/pinggir.png') no-repeat center center/cover;
+      z-index: 1;
+    }
+
+    .pillar-left { left: 0; }
+    .pillar-right { right: 0; transform: scaleX(-1); }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+      z-index: 2;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--text-light);
+    }
+
+    .date {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .italic-text {
+      font-family: 'Playfair Display', cursive;
+      font-style: italic;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .normal-text {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .box {
+      background-color: var(--box-bg);
+      border-radius: 8px;
+      padding: 20px 15px 25px;
+      margin-bottom: 20px;
+    }
+
+    .account {
+      border: 1px solid #a07d7f;
+      border-radius: 8px;
+      padding: 15px 10px 20px;
+      margin-bottom: 20px;
+    }
+
+    .account-header {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .account-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .account-logo {
+      width: 60px;
+      height: 30px;
+      border-radius: 6px;
+      object-fit: contain;
+      background: white;
+      padding: 3px 5px;
+    }
+
+    .btn-copy,
+    .btn-copy-center {
+      background-color: var(--btn-bg);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      padding: 6px 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-copy:hover,
+    .btn-copy-center:hover {
+      background-color: var(--btn-hover);
+    }
+
+    .account-desc {
+      font-size: 13px;
+      margin-left: 70px;
+      line-height: 1.2;
+    }
+
+    .kado-header {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .kado-text {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .btn-copy-center {
+      display: block;
+      margin: 0 auto;
+      padding: 6px 14px;
+    }
+
+    nav.bottom-scroll-nav {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--menu-bg);
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 8px 12px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    nav.bottom-scroll-nav::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    nav.bottom-scroll-nav::-webkit-scrollbar-thumb {
+      background-color: rgba(0,75,63,0.4);
+      border-radius: 3px;
+    }
+
+    nav.bottom-scroll-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--menu-text);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      transition: background 0.3s ease;
+    }
+
+    nav.bottom-scroll-nav a:hover,
+    nav.bottom-scroll-nav a.active {
+      background-color: var(--menu-active);
+    }
+
+    nav.bottom-scroll-nav a i {
+      font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+      .account-desc {
+        margin-left: 0;
+        text-align: center;
+      }
+      .account-row {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="pillar-left"></div>
+  <div class="pillar-right"></div>
+
+  <div class="container" role="main">
+    <header class="header">
+      <span>Dea</span>
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+        2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 
+        14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 
+        11.54L12 21.35z"/></svg>
+      <span>Rossi</span>
+    </header>
+
+    <div class="date">03.07.25</div>
+    <div class="italic-text">Tanda Kasih</div>
+    <p class="normal-text">
+      Terima kasih telah menambah semangat kegembiraan pernikahan kami dengan kehadiran dan hadiah indah Anda.
+    </p>
+
+    <section class="box">
+      <article class="account">
+        <div class="account-header">12345678</div>
+        <div class="account-row">
+          <img class="account-logo" src="https://storage.googleapis.com/a1aa/image/d90c8354-28a9-4813-d03f-2cda25439f22.jpg" alt="Logo BCA" />
+          <button class="btn-copy">Salin Rekening</button>
+        </div>
+        <div class="account-desc">BCA : Atas Nama Rekening</div>
+      </article>
+
+      <article class="account">
+        <div class="account-header">12345678</div>
+        <div class="account-row">
+          <img class="account-logo" src="https://storage.googleapis.com/a1aa/image/82a24cf2-b1b5-4f30-cee3-078ab37895b8.jpg" alt="Logo BNI" />
+          <button class="btn-copy">Salin Rekening</button>
+        </div>
+        <div class="account-desc">BNI : Atas Nama</div>
+      </article>
+    </section>
+
+    <section class="box">
+      <div class="kado-header">Kirim Kado</div>
+      <p class="kado-text">
+        Anda dapat mengirim kado ke:<br />
+        Perumahan GBA 1 Blok G No. 60<br />
+        Bojongsoang, Kabupaten Bandung 40288
+      </p>
+      <button class="btn-copy-center">Salin Alamat</button>
+    </section>
+  </div>
+
+  <nav class="bottom-scroll-nav" aria-label="Navigasi Undangan">
+    <a href="index.html"><i class="fas fa-envelope"></i> Opening</a>
+    <a href="quote.html"><i class="fas fa-moon"></i> Quotes</a>
+    <a href="video.html"><i class="fas fa-video"></i> Video</a>
+    <a href="salam.html"><i class="fas fa-list"></i> Salam</a>
+    <a href="mempelai.html" ><i class="fas fa-heart"></i> Mempelai</a>
+    <a href="akad.html"><i class="fas fa-ring"></i> Akad</a>
+    <a href="Resepsi.html"><i class="fas fa-ring"></i> Resepsi</a>
+    <a href="location.html"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+    <a href="rsvp.html"><i class="fas fa-check-circle"></i> RSVP</a>
+    <a href="Gift.html" class="active"><i class="fas fa-gift"></i> Gift</a>
+  </nav>
+</body>
+</html>

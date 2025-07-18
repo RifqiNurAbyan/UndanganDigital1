@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Undangan - Akad Pernikahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url('images/bg.jpg') no-repeat center center/cover;
+      background-color: #042f2b;
+      color: #f0e6c8;
+      font-family: 'Quicksand', sans-serif;
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+    }
+
+    .pillar-left, .pillar-right {
+      position: fixed;
+      top: 0;
+      width: 60px;
+      height: 100vh;
+      background: url('images/pinggir.png') no-repeat center center/cover;
+      z-index: 1;
+    }
+
+    .pillar-left { left: 0; }
+    .pillar-right { right: 0; transform: scaleX(-1); }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 420px;
+      width: 100%;
+      animation: fadeIn 1.4s ease-out;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+
+    .title .decor {
+      margin: 0 10px;
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .section-title .decor {
+      margin: 0 10px;
+    }
+
+    .time {
+      font-weight: 400;
+      font-size: 18px;
+      margin-bottom: 24px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .day {
+      font-family: 'Great Vibes', cursive;
+      font-size: 58px;
+      margin-bottom: 0;
+      line-height: 1;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    .date {
+      font-size: 56px;
+      margin-top: 0;
+      margin-bottom: 24px;
+      animation: fadeInUp 1.4s ease forwards;
+    }
+
+    .address-title {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 8px;
+      animation: fadeInUp 1.6s ease forwards;
+    }
+
+    .address-title .decor {
+      margin: 0 10px;
+    }
+
+    .address-line {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.4;
+      animation: fadeInUp 1.8s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    nav.bottom-scroll-nav {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(246,230,195,0.95);
+      display: flex;
+      overflow-x: auto;
+      gap: 14px;
+      padding: 10px 16px;
+      max-width: 90vw;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    nav.bottom-scroll-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #004b3f;
+      padding: 6px 10px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      transition: background 0.3s ease;
+    }
+
+    nav.bottom-scroll-nav a:hover,
+    nav.bottom-scroll-nav a.active {
+      background-color: #d6b86a;
+    }
+
+    nav.bottom-scroll-nav a i {
+      font-size: 18px;
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        max-width: 320px;
+      }
+      .title, .section-title, .address-title {
+        font-size: 18px;
+      }
+      .time, .address-line {
+        font-size: 16px;
+      }
+      .day, .date {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="pillar-left"></div>
+  <div class="pillar-right"></div>
+
+  <div class="container" role="main" aria-label="Undangan Akad Pernikahan">
+    <div class="title">
+      <span class="decor">❀</span>
+      Undangan Pengantin
+      <span class="decor">❀</span>
+    </div>
+
+    <div class="section-title">
+      <span class="decor">❀</span>
+      Akad Pernikahan
+      <span class="decor">❀</span>
+    </div>
+
+    <div class="time">Pukul 08.00 WIB - Selesai</div>
+    <p class="day">Minggu</p>
+    <p class="date">23.06.24</p>
+
+    <div class="address-title">
+      <span class="decor">❀</span>
+      Kediaman Wanita
+      <span class="decor">❀</span>
+    </div>
+
+    <p class="address-line">Perum KCVRI</p>
+    <p class="address-line">Blok A. No. 09 RT 01/RW 07</p>
+  </div>
+
+  <nav class="bottom-scroll-nav" aria-label="Navigasi Undangan">
+    <a href="index.html"><i class="fas fa-envelope"></i> Opening</a>
+    <a href="quote.html"><i class="fas fa-moon"></i> Quotes</a>
+    <a href="video.html"><i class="fas fa-video"></i> Video</a>
+    <a href="salam.html"><i class="fas fa-list"></i> Salam</a>
+    <a href="mempelai.html"><i class="fas fa-heart"></i> Mempelai</a>
+    <a href="akad.html" class="active"><i class="fas fa-ring"></i> Akad</a>
+    <a href="Resepsi.html"><i class="fas fa-ring"></i> Resepsi</a>
+    <a href="location.html"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+    <a href="rsvp.html"><i class="fas fa-check-circle"></i> RSVP</a>
+    <a href="Gift.html"><i class="fas fa-gift"></i> Gift</a>
+  </nav>
+</body>
+</html>
